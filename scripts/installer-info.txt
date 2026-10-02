@@ -1,0 +1,9 @@
+NetTools AV — prévia para validação interna
+
+Importação PCAPNG, análise dos protocolos implementados, sessões, relatórios e captura passiva com Npcap instalado.
+
+O driver Npcap não está incluído. A importação de arquivos funciona sem o driver. Consulte CAPACIDADES-E-LIMITES.md para os protocolos implementados e os recursos ainda pendentes.
+
+Esta entrega ainda não é a versão 1.0 homologada. O instalador não possui assinatura digital de produção.
+
+Feche o aplicativo e finalize capturas antes de atualizar ou desinstalar. A desinstalação preserva suas sessões e capturas em %LOCALAPPDATA%\NetToolsAV.

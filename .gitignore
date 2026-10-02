@@ -1,0 +1,25 @@
+.tools/
+**/bin/
+**/obj/
+artifacts/
+.vs/
+*.user
+*.sqlite
+*.sqlite-shm
+*.sqlite-wal
+*.pcap
+*.pcapng
+*.log
+
+# Local dependencies, credentials and private evidence
+**/node_modules/
+.env
+.env.*
+!.env.example
+*.pfx
+*.p12
+*.pem
+*.key
+*.dmp
+captures/
+private/

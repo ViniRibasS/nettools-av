@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="pt-BR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title>NetTools AV · Laboratório</title>
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="protocols.js"></script>
+  <script defer src="view.js"></script>
+</head>
+<body>
+<div class="app" id="app">
+  <aside class="sidebar" aria-label="Navegação principal">
+    <div class="brand"><span class="brand-mark" aria-hidden="true">n<span>•</span></span><strong>NetTools <span>AV</span></strong><button class="icon-button" data-action="sidebar" aria-label="Recolher navegação" data-icon="panel-left"></button></div>
+    <button class="nav-action" data-action="new" data-leading="plus">Nova sessão <kbd>Ctrl N</kbd></button>
+    <button class="nav-action" data-action="search" data-leading="search">Buscar protocolo <kbd>Ctrl K</kbd></button>
+    <nav class="primary-nav">
+      <button class="nav-item active" data-page="session" data-leading="activity" aria-current="page">Protocolos</button>
+      <button class="nav-item" data-page="captures" data-leading="layers">Capturas</button>
+      <button class="nav-item" data-page="reports" data-leading="file">Relatórios</button>
+    </nav>
+    <div class="nav-label">Projetos <span>1</span></div>
+    <div class="project-name" data-leading="folder">Laboratório AV <span class="chevron">⌄</span></div>
+    <div id="sessions" class="session-list"></div>
+    <div class="sidebar-note"><span class="tiny-dot"></span> Ambiente local<div>Seus diagnósticos, no seu computador.</div></div>
+    <div class="sidebar-bottom"><div class="avatar">AV</div><div><strong>Workspace interno</strong><span>NetTools AV · Protótipo 0.2</span></div><button class="icon-button" data-action="theme" aria-label="Alternar tema" data-icon="sun"></button></div>
+  </aside>
+  <div class="workspace">
+    <header class="topbar"><div class="breadcrumbs"><button class="icon-button" data-action="sidebar" aria-label="Alternar navegação" data-icon="panel-left"></button><span>Laboratório AV</span><span class="slash">/</span><strong id="breadcrumb-session">Validação de bancada</strong></div><div class="top-actions"><span class="demo-badge">Demonstração</span><button class="icon-button" data-action="inspector" aria-label="Alternar painel de detalhes" data-icon="panel-right" aria-expanded="true"></button></div></header>
+    <div class="work-area">
+      <main id="main" class="main"></main>
+      <aside id="inspector" class="inspector" aria-label="Detalhes do protocolo"></aside>
+    </div>
+    <footer class="statusbar"><span><i class="tiny-dot"></i> Dados fictícios · nenhuma conexão de rede</span><span id="footer-context">Ethernet · modo local</span></footer>
+  </div>
+</div>
+<dialog id="new-dialog" aria-labelledby="new-title"><form id="new-form"><div class="dialog-heading"><h2 id="new-title">Nova sessão</h2><button type="button" class="icon-button" data-action="close" aria-label="Fechar nova sessão" data-icon="x"></button></div><p>Organize um novo ponto de teste no Laboratório AV.</p><label>Nome da sessão<input name="sessionName" placeholder="Ex.: Verificação do auditório" maxlength="70" required></label><label>Ponto de teste<input name="location" placeholder="Ex.: Rack principal · porta 12" maxlength="80" required></label><div class="dialog-note">Protótipo visual. A sessão fica apenas nesta página.</div><div class="dialog-actions"><button type="button" class="button" data-action="close">Cancelar</button><button class="button primary" type="submit">Criar sessão</button></div></form></dialog>
+<dialog id="search-dialog" aria-labelledby="search-title"><div class="dialog-heading"><h2 id="search-title">Buscar protocolo</h2><button class="icon-button" data-action="close" aria-label="Fechar busca" data-icon="x"></button></div><input id="search-input" type="search" aria-label="Protocolo, família ou versão" placeholder="Protocolo, família ou versão…"><div id="search-results" class="search-results"></div></dialog>
+<dialog id="report-dialog" aria-labelledby="report-title"><div class="dialog-heading"><h2 id="report-title">Resumo da sessão</h2><button class="icon-button" data-action="close" aria-label="Fechar relatório" data-icon="x"></button></div><span class="demo-badge">Relatório demonstrativo</span><pre id="report-text"></pre><div class="dialog-actions"><button class="button" data-action="close">Fechar</button><button class="button primary" data-action="download" data-leading="download">Baixar TXT</button></div></dialog>
+<div id="toast" class="toast" role="status" hidden></div>
+</body>
+</html>
+

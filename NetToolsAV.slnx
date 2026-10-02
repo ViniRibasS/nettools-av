@@ -1,0 +1,10 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/NetToolsAV.Core/NetToolsAV.Core.csproj" />
+    <Project Path="src/NetToolsAV.Infrastructure/NetToolsAV.Infrastructure.csproj" />
+    <Project Path="src/NetToolsAV.Desktop/NetToolsAV.Desktop.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/NetToolsAV.Checks/NetToolsAV.Checks.csproj" />
+  </Folder>
+</Solution>

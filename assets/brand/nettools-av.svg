@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="NetTools AV: cabo RJ45 formando arroba">
+ <g fill="none" stroke="#292a28" stroke-width="9" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M93 101C75 118 40 114 22 94C2 73 9 36 30 20C53 2 89 8 107 29C122 48 119 79 105 87C93 94 81 87 83 74L91 42M85 47C66 30 42 44 41 64C39 86 65 95 79 75"/>
+ </g>
+ <path d="M80 18L104 24 104 32 109 34 102 58 76 51 82 28 78 26Z" fill="#fcfcfb" stroke="#292a28" stroke-width="4" stroke-linejoin="round"/>
+ <path d="M83 33L80 44M86 34L83 45M89 35L86 46M92 36L89 47M95 37L92 48M98 38L95 49M101 39L98 50M104 40L101 51" fill="none" stroke="#b99852" stroke-width="1.6" stroke-linecap="round"/>
+</svg>
+

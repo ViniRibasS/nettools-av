@@ -1,0 +1,98 @@
+<Application x:Class="NetToolsAV.Desktop.App"
+ xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+ xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+ <Application.Resources>
+  <SolidColorBrush x:Key="CanvasBrush" Color="#FCFCFB" />
+  <SolidColorBrush x:Key="SideBrush" Color="#F2F1EF" />
+  <SolidColorBrush x:Key="PanelBrush" Color="#F8F8F6" />
+  <SolidColorBrush x:Key="TextBrush" Color="#292A28" />
+  <SolidColorBrush x:Key="MutedBrush" Color="#70726C" />
+  <SolidColorBrush x:Key="LineBrush" Color="#E5E5E0" />
+  <SolidColorBrush x:Key="SelectedBrush" Color="#E7E7E2" />
+  <SolidColorBrush x:Key="StrongBrush" Color="#272925" />
+  <SolidColorBrush x:Key="OnStrongBrush" Color="#FFFFFF" />
+  <Style TargetType="Window">
+   <Setter Property="FontFamily" Value="Segoe UI"/><Setter Property="FontSize" Value="13"/>
+   <Setter Property="Background" Value="{DynamicResource CanvasBrush}"/><Setter Property="Foreground" Value="{DynamicResource TextBrush}"/>
+  </Style>
+  <Style TargetType="TextBlock"><Setter Property="Foreground" Value="{DynamicResource TextBrush}"/></Style>
+  <Style TargetType="Label"><Setter Property="Foreground" Value="{DynamicResource TextBrush}"/></Style>
+  <Style x:Key="MutedText" TargetType="TextBlock"><Setter Property="Foreground" Value="{DynamicResource MutedBrush}"/><Setter Property="FontSize" Value="12"/><Setter Property="TextWrapping" Value="Wrap"/></Style>
+  <Style TargetType="Button">
+   <Setter Property="Foreground" Value="{DynamicResource TextBrush}"/><Setter Property="Background" Value="{DynamicResource CanvasBrush}"/>
+   <Setter Property="BorderBrush" Value="{DynamicResource LineBrush}"/><Setter Property="Padding" Value="12,8"/>
+   <Setter Property="Cursor" Value="Hand"/><Setter Property="MinHeight" Value="34"/>
+   <Setter Property="Template"><Setter.Value><ControlTemplate TargetType="Button">
+    <Border x:Name="Frame" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="1" CornerRadius="7" Padding="{TemplateBinding Padding}">
+     <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+    </Border>
+    <ControlTemplate.Triggers>
+     <Trigger Property="IsMouseOver" Value="True"><Setter TargetName="Frame" Property="Background" Value="{DynamicResource SelectedBrush}"/></Trigger>
+     <Trigger Property="IsKeyboardFocused" Value="True"><Setter TargetName="Frame" Property="BorderBrush" Value="{DynamicResource TextBrush}"/><Setter TargetName="Frame" Property="BorderThickness" Value="2"/></Trigger>
+     <Trigger Property="IsEnabled" Value="False"><Setter Property="Opacity" Value="0.45"/></Trigger>
+    </ControlTemplate.Triggers>
+   </ControlTemplate></Setter.Value></Setter>
+  </Style>
+  <Style x:Key="NavButton" TargetType="Button" BasedOn="{StaticResource {x:Type Button}}">
+   <Setter Property="Background" Value="Transparent"/><Setter Property="BorderBrush" Value="Transparent"/><Setter Property="HorizontalContentAlignment" Value="Left"/><Setter Property="Margin" Value="0,3"/>
+  </Style>
+  <Style TargetType="TextBox"><Setter Property="Padding" Value="9,7"/><Setter Property="Background" Value="{DynamicResource CanvasBrush}"/><Setter Property="Foreground" Value="{DynamicResource TextBrush}"/><Setter Property="BorderBrush" Value="{DynamicResource LineBrush}"/><Setter Property="SelectionBrush" Value="{DynamicResource SelectedBrush}"/></Style>
+  <DrawingImage x:Key="BrandMark">
+   <DrawingImage.Drawing><DrawingGroup>
+    <GeometryDrawing Brush="Transparent" Geometry="M0,0 L128,0 128,128 0,128 Z"/>
+    <GeometryDrawing Geometry="M93,101 C75,118 40,114 22,94 C2,73 9,36 30,20 C53,2 89,8 107,29 C122,48 119,79 105,87 C93,94 81,87 83,74 L91,42 M85,47 C66,30 42,44 41,64 C39,86 65,95 79,75">
+     <GeometryDrawing.Pen><Pen Brush="{DynamicResource TextBrush}" Thickness="9" StartLineCap="Round" EndLineCap="Round" LineJoin="Round"/></GeometryDrawing.Pen>
+    </GeometryDrawing>
+    <GeometryDrawing Brush="{DynamicResource CanvasBrush}" Geometry="M80,18 L104,24 104,32 109,34 102,58 76,51 82,28 78,26 Z">
+     <GeometryDrawing.Pen><Pen Brush="{DynamicResource TextBrush}" Thickness="4" LineJoin="Round"/></GeometryDrawing.Pen>
+    </GeometryDrawing>
+    <GeometryDrawing Geometry="M83,33 L80,44 M86,34 L83,45 M89,35 L86,46 M92,36 L89,47 M95,37 L92,48 M98,38 L95,49 M101,39 L98,50 M104,40 L101,51">
+     <GeometryDrawing.Pen><Pen Brush="#B99852" Thickness="1.6" StartLineCap="Round" EndLineCap="Round"/></GeometryDrawing.Pen>
+    </GeometryDrawing>
+   </DrawingGroup></DrawingImage.Drawing>
+  </DrawingImage>
+  <Style TargetType="ComboBoxItem">
+   <Setter Property="Foreground" Value="{DynamicResource TextBrush}"/><Setter Property="Padding" Value="12,9"/><Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+   <Setter Property="Template"><Setter.Value><ControlTemplate TargetType="ComboBoxItem">
+    <Border x:Name="ItemSurface" Background="Transparent" Padding="{TemplateBinding Padding}" CornerRadius="6" Margin="3,1"><ContentPresenter/></Border>
+    <ControlTemplate.Triggers><Trigger Property="IsHighlighted" Value="True"><Setter TargetName="ItemSurface" Property="Background" Value="{DynamicResource SelectedBrush}"/></Trigger><Trigger Property="IsSelected" Value="True"><Setter TargetName="ItemSurface" Property="Background" Value="{DynamicResource SelectedBrush}"/></Trigger></ControlTemplate.Triggers>
+   </ControlTemplate></Setter.Value></Setter>
+  </Style>
+  <Style TargetType="ComboBox">
+   <Setter Property="Foreground" Value="{DynamicResource TextBrush}"/><Setter Property="Background" Value="{DynamicResource CanvasBrush}"/><Setter Property="BorderBrush" Value="{DynamicResource LineBrush}"/><Setter Property="MinHeight" Value="38"/><Setter Property="Padding" Value="12,9"/>
+   <Setter Property="ScrollViewer.CanContentScroll" Value="True"/><Setter Property="MaxDropDownHeight" Value="280"/>
+   <Setter Property="Template"><Setter.Value><ControlTemplate TargetType="ComboBox">
+    <Grid>
+     <ToggleButton Focusable="False" ClickMode="Press" IsChecked="{Binding IsDropDownOpen, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}">
+      <ToggleButton.Template><ControlTemplate TargetType="ToggleButton"><Border x:Name="Surface" Background="{DynamicResource CanvasBrush}" BorderBrush="{DynamicResource LineBrush}" BorderThickness="1" CornerRadius="8"><Grid><Path Data="M0,0 L4,4 8,0" Stroke="{DynamicResource MutedBrush}" StrokeThickness="1.5" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,13,0"/></Grid></Border><ControlTemplate.Triggers><Trigger Property="IsMouseOver" Value="True"><Setter TargetName="Surface" Property="Background" Value="{DynamicResource PanelBrush}"/></Trigger><Trigger Property="IsChecked" Value="True"><Setter TargetName="Surface" Property="BorderBrush" Value="{DynamicResource MutedBrush}"/></Trigger></ControlTemplate.Triggers></ControlTemplate></ToggleButton.Template>
+     </ToggleButton>
+     <ContentPresenter Content="{TemplateBinding SelectionBoxItem}" ContentTemplate="{TemplateBinding SelectionBoxItemTemplate}" Margin="12,8,32,8" VerticalAlignment="Center" IsHitTestVisible="False"/>
+     <TextBlock x:Name="Placeholder" Text="{TemplateBinding Tag}" Foreground="{DynamicResource MutedBrush}" Margin="12,8,32,8" VerticalAlignment="Center" IsHitTestVisible="False" Visibility="Collapsed"/>
+     <Border x:Name="FocusRing" BorderBrush="{DynamicResource MutedBrush}" BorderThickness="1" CornerRadius="8" Visibility="Collapsed" IsHitTestVisible="False"/>
+     <Popup x:Name="PART_Popup" Placement="Bottom" AllowsTransparency="True" Focusable="False" IsOpen="{TemplateBinding IsDropDownOpen}" PopupAnimation="Fade">
+      <Border Background="{DynamicResource PanelBrush}" BorderBrush="{DynamicResource LineBrush}" BorderThickness="1" CornerRadius="9" Padding="4" Margin="0,5,0,4" MinWidth="{Binding ActualWidth, RelativeSource={RelativeSource TemplatedParent}}" MaxHeight="{TemplateBinding MaxDropDownHeight}">
+       <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled" CanContentScroll="True"><ItemsPresenter KeyboardNavigation.DirectionalNavigation="Contained"/></ScrollViewer>
+      </Border>
+     </Popup>
+    </Grid>
+    <ControlTemplate.Triggers><Trigger Property="SelectedItem" Value="{x:Null}"><Setter TargetName="Placeholder" Property="Visibility" Value="Visible"/></Trigger><Trigger Property="IsKeyboardFocusWithin" Value="True"><Setter TargetName="FocusRing" Property="Visibility" Value="Visible"/></Trigger><Trigger Property="IsEnabled" Value="False"><Setter Property="Opacity" Value="0.45"/></Trigger></ControlTemplate.Triggers>
+   </ControlTemplate></Setter.Value></Setter>
+  </Style>
+  <Style TargetType="ListBox"><Setter Property="Background" Value="Transparent"/><Setter Property="Foreground" Value="{DynamicResource TextBrush}"/><Setter Property="BorderThickness" Value="0"/><Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Disabled"/></Style>
+  <Style TargetType="ListBoxItem">
+   <Setter Property="Padding" Value="10,9"/><Setter Property="Margin" Value="0,2"/><Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+   <Setter Property="Template"><Setter.Value><ControlTemplate TargetType="ListBoxItem"><Border x:Name="Frame" Padding="{TemplateBinding Padding}" CornerRadius="7" Background="Transparent"><ContentPresenter/></Border><ControlTemplate.Triggers><Trigger Property="IsSelected" Value="True"><Setter TargetName="Frame" Property="Background" Value="{DynamicResource SelectedBrush}"/></Trigger><Trigger Property="IsKeyboardFocusWithin" Value="True"><Setter TargetName="Frame" Property="BorderBrush" Value="{DynamicResource MutedBrush}"/><Setter TargetName="Frame" Property="BorderThickness" Value="1"/></Trigger></ControlTemplate.Triggers></ControlTemplate></Setter.Value></Setter>
+  </Style>
+  <Style TargetType="DataGrid">
+   <Setter Property="Background" Value="{DynamicResource CanvasBrush}"/><Setter Property="Foreground" Value="{DynamicResource TextBrush}"/><Setter Property="BorderThickness" Value="0"/>
+   <Setter Property="RowBackground" Value="{DynamicResource CanvasBrush}"/><Setter Property="HorizontalGridLinesBrush" Value="{DynamicResource LineBrush}"/><Setter Property="GridLinesVisibility" Value="Horizontal"/>
+   <Setter Property="AutoGenerateColumns" Value="False"/><Setter Property="IsReadOnly" Value="True"/><Setter Property="CanUserAddRows" Value="False"/><Setter Property="CanUserDeleteRows" Value="False"/>
+   <Setter Property="HeadersVisibility" Value="Column"/><Setter Property="SelectionMode" Value="Single"/><Setter Property="RowHeight" Value="57"/>
+  </Style>
+  <Style TargetType="DataGridColumnHeader"><Setter Property="Background" Value="{DynamicResource CanvasBrush}"/><Setter Property="Foreground" Value="{DynamicResource MutedBrush}"/><Setter Property="Padding" Value="10,12"/><Setter Property="FontSize" Value="11"/><Setter Property="BorderThickness" Value="0,0,0,1"/><Setter Property="BorderBrush" Value="{DynamicResource LineBrush}"/></Style>
+  <Style TargetType="DataGridCell"><Setter Property="BorderThickness" Value="0"/><Setter Property="Padding" Value="10,4"/><Setter Property="Foreground" Value="{DynamicResource TextBrush}"/><Setter Property="Template"><Setter.Value><ControlTemplate TargetType="DataGridCell"><Border Background="{TemplateBinding Background}" Padding="{TemplateBinding Padding}"><ContentPresenter VerticalAlignment="Center"/></Border></ControlTemplate></Setter.Value></Setter><Style.Triggers><Trigger Property="IsSelected" Value="True"><Setter Property="Background" Value="{DynamicResource SelectedBrush}"/></Trigger></Style.Triggers></Style>
+ </Application.Resources>
+</Application>
+
+
+

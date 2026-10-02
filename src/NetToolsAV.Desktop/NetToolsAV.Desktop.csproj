@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net10.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <AssemblyName>NetToolsAV</AssemblyName>
+    <RootNamespace>NetToolsAV.Desktop</RootNamespace>
+    <ApplicationIcon>../../assets/brand/nettools-av.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Resource Include="../../assets/brand/nettools-av.ico" Link="Assets/nettools-av.ico" />
+    <Content Include="../../assets/licenses/*" Link="licenses/%(Filename)%(Extension)" CopyToOutputDirectory="PreserveNewest" />
+    <Content Include="../../docs/operacao/capturas.md" Link="GUIA-DE-USO.md" CopyToOutputDirectory="PreserveNewest" />
+    <Content Include="../../docs/engenharia/14-matriz-0.2-e-homologacao.md" Link="CAPACIDADES-E-LIMITES.md" CopyToOutputDirectory="PreserveNewest" />
+    <ProjectReference Include="../NetToolsAV.Core/NetToolsAV.Core.csproj" />
+    <ProjectReference Include="../NetToolsAV.Infrastructure/NetToolsAV.Infrastructure.csproj" />
+  </ItemGroup>
+</Project>
