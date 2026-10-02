@@ -1,6 +1,8 @@
 # Repositório e distribuição no GitHub
 
-Destino escolhido pelo responsável: `ViniRibasS/nettools-av`, público. O status de publicação deve ser confirmado no GitHub; este documento define organização e operação.
+Repositório público criado em 02/10/2026: [ViniRibasS/nettools-av](https://github.com/ViniRibasS/nettools-av). Branch principal `main`, remoto `origin` por HTTPS. Primeiro commit: `5cbe872`. Autor local usa endereço noreply do GitHub; a configuração global do Git foi preservada.
+
+Distribuição: [pré-release 0.2.0-preview.2](https://github.com/ViniRibasS/nettools-av/releases/tag/v0.2.0-preview.2). A tag aponta para a importação inicial, não para um commit original de compilação do binário.
 
 ## Estrutura
 

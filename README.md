@@ -6,6 +6,8 @@ Baseline: **02/10/2026 · 0.2.0-preview.2 · homologação 1.0 pendente**.
 
 ## Começar
 
+**[Baixar instalador e versão portátil](https://github.com/ViniRibasS/nettools-av/releases/tag/v0.2.0-preview.2)** · [Documentação completa](docs/README.md) · [Guia de uso do GitHub](docs/operacao/github.md)
+
 Menu Iniciar → NetTools AV. Instalador local: `artifacts/installers/NetToolsAV-0.2.0-preview.2-win-x64-setup.exe`. Versão portátil: `artifacts/releases/0.2.0-preview.2`; mantenha os arquivos juntos. Runtime .NET incluído; Npcap separado para captura ao vivo. Importação PCAPNG funciona sem driver. Sem atualização automática ou assinatura digital de produção.
 
 Leia o [manual de uso](docs/operacao/manual-do-usuario.md) e o [índice completo](docs/README.md).

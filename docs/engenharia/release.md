@@ -6,7 +6,7 @@ Baseline 0.2.0-preview.2, não homologada como 1.0. [Registro do instalador](../
 
 Versão do produto em Directory.Build.props; SDK em global.json; NuGet em locks; compilador Inno conforme registro. CatalogVersion, Analyzer e Schema são contratos separados: não incrementar automaticamente todos ao mudar somente embalagem.
 
-O repositório local inicial estava sem commits; o manifesto atual registra `working tree; uncommitted`. Não existe tag/commit de release ou CI remoto comprovado. Antes de release formal, estabelecer revisão rastreável e preencher identidade verdadeira; o script ainda não calcula SHA de Git automaticamente.
+O instalador inicial foi compilado antes do primeiro commit; seu manifesto registra `working tree; uncommitted`. Em 02/10/2026, as fontes/documentos foram importados no commit `5cbe872` e tag `v0.2.0-preview.2` no [repositório público](https://github.com/ViniRibasS/nettools-av). Essa tag não representa o commit original de build do binário. Não há CI remoto configurado; o script ainda não calcula SHA de Git automaticamente. Próximas entregas precisam registrar a revisão real de compilação.
 
 ## Pipeline manual
 
